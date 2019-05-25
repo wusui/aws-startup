@@ -73,3 +73,9 @@ rm ~/dot-ocs-ci-yaml
 rm ~/aws_config
 rm ~/aws_credentials
 rm ~/pull-secret
+
+sudo yum install postfix mailx -y
+x=`hostname -f`
+sudo sed -i "s/#myhostname = virtual.domain.tld/myhostname = ${x}/" /etc/postfix/main.cf
+sudo systemctl start postfix
+sudo systemctl enable postfix
