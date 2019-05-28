@@ -7,10 +7,9 @@ It assumes that the directory ../notes exists and contains the following files:
 
 * info -- a set of bash export lines that define variables needed
 * pull-secret -- a copy of the pull secret
+* <pemfile>.pem -- pem file used to sign on to ec2 services. Export PEMFILE=name-of-your-file
 
 I also find it convenient to keep a copy of my pem file in notes.
-
-The info file will look like (change values to suit your needs):
 
 ```
 export MYNAME='imontoya'
