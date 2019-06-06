@@ -38,7 +38,7 @@ cd ocs-ci
 pip install -r requirements.txt
 
 # aws setup
-mkdir ~/.aws
+mkdir ~/ocs-ci/.aws
 mkdir ~/ocs-ci/data
 
 cat <<EOF > ~/.gitconfig
@@ -65,8 +65,8 @@ aws_secret_access_key=${AWS_SECRET_ACCESS_KEY}
 EOF
 
 cp ~/dot-ocs-ci-yaml ~/.ocs-ci.yaml
-cp ~/aws_config ~/.aws/config
-cp ~/aws_credentials ~/.aws/credentials
+cp ~/aws_config ~/ocs-ci/.aws/config
+cp ~/aws_credentials ~/ocs-ci/.aws/credentials
 cp ~/pull-secret ~/ocs-ci/data/pull-secret
 chmod 0400 ~/ocs-ci/data/pull-secret
 rm ~/dot-ocs-ci-yaml
@@ -79,3 +79,4 @@ x=`hostname -f`
 sudo sed -i "s/#myhostname = virtual.domain.tld/myhostname = ${x}/" /etc/postfix/main.cf
 sudo systemctl start postfix
 sudo systemctl enable postfix
+
