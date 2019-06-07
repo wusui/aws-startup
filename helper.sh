@@ -14,7 +14,7 @@
 source ../notes/info
 IPADDR=`echo ${1} | tr '.' '-'`
 REGION=${REGION:-us-east-2}
-PEMFILE=${PEMFILE:-aardvark.pem}
+PEMFILE=${PEMFILE:-wusui.pem}
 temp1=`mktemp`
 temp2=`mktemp`
 x=`python3 get_oc.py`
