@@ -22,5 +22,5 @@ echo "export OCLIENT='${x}'" > ${temp1}
 cat ../notes/info ${temp1} > ${temp2}
 scp -i ../notes/${PEMFILE} ${temp2} ec2-user@ec2-${IPADDR}.${REGION}.compute.amazonaws.com:info
 scp -i ../notes/${PEMFILE} ../notes/pull-secret ec2-user@ec2-${IPADDR}.${REGION}.compute.amazonaws.com:.
-scp -i ../notes/${PEMFILE} ../aws_helper/install_oc_and_ocsci.sh ec2-user@ec2-${IPADDR}.${REGION}.compute.amazonaws.com:.
+scp -i ../notes/${PEMFILE} ./install_oc_and_ocsci.sh ec2-user@ec2-${IPADDR}.${REGION}.compute.amazonaws.com:.
 rm -rf ${temp1} ${temp2}

@@ -35,6 +35,7 @@ sudo mv kubectl /usr/bin/kubectl
 cd ~
 git clone https://github.com/${MYNAME}/ocs-ci
 cd ocs-ci
+pip install --upgrade pip
 pip install -r requirements.txt
 
 # aws setup
