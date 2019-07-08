@@ -25,7 +25,7 @@ EOF
 # Crudely get latest ocp client tar file
 #
 wget https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/
-LATEST=`grep openshift-client-linux index.html | sed 's/^.*open/open/' | sed 's/.gz<.*//'`
+LATEST=`grep openshift-client-linux index.html | sed 's/^.*openshift-client-linux/openshift-client-linux/' | sed 's/.gz.*//'`
 rm rf index.html
 #
 # Prerequisites, Step 3
@@ -70,8 +70,8 @@ chmod 0700 data/pull-secret
 #
 # Other stuff (set git name and email address)
 #
-git config --global user.name "Warren Usui"
-git config --global user.email "wusui@redhat.com"
+git config --global user.name "${FULLNAME}"
+git config --global user.email "${EMAIL}"
 #
 # Install will be something like:
 #
